@@ -1,0 +1,71 @@
+[
+    {
+    "artist": "Frank Ocean",
+    "title": "Thinkin Bout You",
+    "genre": ["R&B"],
+    "year": 2012   
+    },
+
+    {
+    "artist": "Drake",
+    "title": "Passionfruit",
+    "genre": ["RAP"],
+    "year": 2017
+    },
+    
+    {
+    "artist": "John Mayer",
+    "title": "New Light",
+    "genre": ["POP","ROCK"],
+    "year": 2018
+    },
+    
+    {
+    "artist": "Brockhampton",
+    "title": "1999 Wildfire",
+    "genre": ["RAP"],
+    "year": 2018
+    },
+    
+    {
+    "artist": "Earl Sweatshirt",
+    "title": "Riot!",
+    "genre": ["RAP"],
+    "year": 2018
+    },
+
+    {
+    "artist": "Frank Ocean",
+    "title": "White Ferrari",
+    "genre": ["R&B"],
+    "year": 2016
+    },
+    
+    {
+    "artist": "Childish Gambino",
+    "title": "Redbone",
+    "genre": ["RAP","R&B"],
+    "year": 2016
+    },
+    
+    {
+    "artist": "Moses Sumney",
+    "title": "Plastic",
+    "genre": ["POP","ROCK","R&B","JAZZ"],
+    "year": 2017
+    },
+    
+    {
+    "artist": "Kehlani",
+    "title": "Honey",
+    "genre": ["R&B"],
+    "year": 2017
+    },
+    
+    {
+    "artist": "Childish Gambino",
+    "title": "Feels Like Summer",
+    "genre": ["RAP","R&B"],
+    "year": 2018
+    }
+]
