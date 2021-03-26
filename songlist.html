@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Song List</title>
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"
+		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous">
+</script>
+
+</head>
+
+<body>
+	<script language="javascript">
+	// variable to store retrieved data even after $.get process has ended.
+	var filter_str;
+	
+	// retrieve the file from the address
+	$.get( "https://ggomarobot.github.io/HW09/songlist.json", function(data){
+		str = JSON.stringify(data);
+		// store the retrieved outside of this function to be used later.
+		filter_str = data;
+		
+		// PART II of our assignment
+		// Display all data on page (serialized) as a raw string
+		document.getElementById("part_II").innerHTML = str + "<br />";
+
+		// varaible to show the track number for each track.
+		track_number = 1;
+		// table to display our song list
+		strHTML = "<table>" + "<thead>" +
+				  "<th>ARTIST</th>" +
+				  "<th>TITLE</th>" +
+				  "<th>GENRE</th>" +
+				  "<th>YEAR</th>" +
+				  "</thead>" +
+		   		  "<tbody>";
+				
+		
+		data.forEach(function(song) {
+			strHTML += "<tr>" 
+			+ "<td>" + track_number + ".&nbsp;" + song.artist + "</td>"
+			+ "<td>" + song.title + "</td>"
+			+ "<td>" + song.genre + "</td>"
+			+ "<td>" + song.year + "</td>"
+			+ "</tr>";
+			track_number ++;
+		});
+		
+	strHTML += "</tbody>" + "</table>"
+	document.getElementById("part_III").innerHTML = strHTML;
+});
+
+// used for PART IV of our assignment, to filter songs by selected genre
+function filter()
+{	
+	genre = document.getElementById("genre").value
+	filterHTML= "<ul>";
+	filter_str.forEach(function(search){
+		for (i = 0; i < search.genre.length; i++) {
+			if (genre == search.genre[i]) {
+				filterHTML += "<li>"
+						   + search.title + "</li>";
+				}
+			}
+	});
+	filterHTML += "</ul>";
+	document.getElementById("part_IV_filter").innerHTML = filterHTML; 
+}
+</script>
+
+<article id="part_II_container" style="margin: 30px">
+<div id = "part_II">
+	
+</div>
+</article>
+	
+<article id="part_III_container" style="margin: 30px">
+<div id = "part_III">
+	
+</div>
+</article>
+
+<article id="part_IV_container" style="margin: 30px">
+<div id = "part_IV">
+    
+<form name="form1" id="form1" style="margin: 30px">
+Choose a genre:
+<select name="genre" id="genre" size="1">
+	<option value="genre" selected="selected">Genre</option>
+    <option value="JAZZ">JAZZ</option>
+    <option value="R&B">R&B</option>
+    <option value="RAP">RAP</option>
+    <option value="POP">POP</option>
+    <option value="ROCK">ROCK</option>
+</select>
+   <input type="button" value="Filter" onclick='filter()'>
+ </form>
+</div>
+<div id = "part_IV_filter">
+</div>
+</article>
+
+
+
+  </body>
+</html>
